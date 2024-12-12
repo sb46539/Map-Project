@@ -7,6 +7,7 @@ using namespace std;
 
 class scheduleItem {
 private:
+
     string subject;
     string catalog;
     string section;
@@ -18,10 +19,12 @@ private:
     string instructor;
 
 public:
+
     scheduleItem(string subj = "", string cat = "", string sec = "", string comp = "",
         string sess = "", int u = 0, int tot = 0, int cap = 0, string instr = "")
         : subject(subj), catalog(cat), section(sec), component(comp),
         session(sess), units(u), totEnrl(tot), capEnrl(cap), instructor(instr) {}
+
 
     string getSubject() const { return subject; }
     string getCatalog() const { return catalog; }
@@ -33,6 +36,7 @@ public:
     int getCapEnrl() const { return capEnrl; }
     string getInstructor() const { return instructor; }
 
+
     bool operator==(const scheduleItem& other) const {
         return (subject + "_" + catalog + "_" + section) ==
             (other.subject + "_" + other.catalog + "_" + other.section);
@@ -43,9 +47,11 @@ public:
             (other.subject + "_" + other.catalog + "_" + other.section);
     }
 
+
     void print() const {
+
         cout << setw(10) << subject << setw(10) << catalog << setw(10) << section
-            << setw(10) << component << setw(10) << session << setw(10) << units
+            << setw(10) << component << setw(10) << session << setw(6) << units
             << setw(10) << totEnrl << setw(10) << capEnrl << setw(20) << instructor << endl;
     }
 };

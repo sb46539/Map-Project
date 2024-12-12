@@ -13,7 +13,6 @@ private:
     map<string, scheduleItem> scheduleMap;
 
 public:
-
     void initSchedule(ifstream& file) {
         string line, subject, catalog, section, component, session, instructor;
         int units, totEnrl, capEnrl;
@@ -29,7 +28,7 @@ public:
             std::getline(ss, component, ',');
             std::getline(ss, session, ',');
             ss >> units;
-            ss.ignore();
+            ss.ignore(); 
             ss >> totEnrl;
             ss.ignore();
             ss >> capEnrl;
@@ -47,13 +46,24 @@ public:
         scheduleMap[key] = item;
     }
 
+
     void print() const {
-        cout << setw(10) << "Subject" << setw(10) << "Catalog" << setw(10) << "Section"
-            << setw(10) << "Component" << setw(10) << "Session" << setw(10) << "Units"
-            << setw(10) << "TotEnrl" << setw(10) << "CapEnrl" << setw(20) << "Instructor" << endl;
+
+        cout << "Subject   | Catalog  | Section  | Component | Session | Units | TotEnrl | CapEnrl | Instructor\n";
+
 
         for (const auto& pair : scheduleMap) {
-            pair.second.print();
+            const scheduleItem& item = pair.second;
+
+            cout << item.getSubject() << "   | "
+                << item.getCatalog() << "       | "
+                << item.getSection() << "       | "
+                << item.getComponent() << "      | "
+                << item.getSession() << "  | "
+                << item.getUnits() << "    | "
+                << item.getTotEnrl() << "       | "
+                << item.getCapEnrl() << "      | "
+                << item.getInstructor() << endl;
         }
     }
 
@@ -81,4 +91,3 @@ public:
         }
     }
 };
-

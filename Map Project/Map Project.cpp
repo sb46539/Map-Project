@@ -12,18 +12,24 @@ int main() {
     file.close();
 
     int choice;
+
+
     do {
-        cout << "---SELECTION MENU---\n";
-        cout << "1) Print schedule\n";
+
+        cout << "--- Schedule Menu ---\n";
+        cout << "1) Print the schedule\n";
         cout << "2) Find by subject\n";
         cout << "3) Find by subject and catalog\n";
         cout << "4) Find by instructor\n";
         cout << "5) Exit\n";
-        cout << "Enter Selection: ";
+
+
+        cout << "Enter your choice: ";
         cin >> choice;
 
+
         if (choice == 1) {
-            mySchedule.print();
+            mySchedule.print(); 
         }
         else if (choice == 2) {
             string subject;
@@ -35,16 +41,17 @@ int main() {
             string subject, catalog;
             cout << "Enter subject: ";
             cin >> subject;
-            cout << "Enter catalog: ";
+            cout << "Enter catalog number: ";
             cin >> catalog;
             mySchedule.findBySubjectAndCatalog(subject, catalog);
         }
         else if (choice == 4) {
             string lastName;
-            cout << "Enter instructor last name: ";
+            cout << "Enter instructor's last name: ";
             cin >> lastName;
             mySchedule.findByInstructor(lastName);
         }
+
     } while (choice != 5);
 
     return 0;
