@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
     schedule mySchedule;
-
+    
     ifstream file("STEM - Summer 2022 Schedule of Classes as of 05-02-22.csv");
 
     mySchedule.initSchedule(file);
