@@ -16,7 +16,7 @@ int main() {
 
     do {
 
-        cout << "--- Schedule Menu ---\n";
+        cout << "Schedule Selection screen\n";
         cout << "1) Print the schedule\n";
         cout << "2) Find by subject\n";
         cout << "3) Find by subject and catalog\n";
